@@ -11,7 +11,8 @@ public class Principal {
 		mulher.setAltura(Float.parseFloat(JOptionPane.showInputDialog("Qual sua altura em metros?")));
 		mulher.setPeso(Float.parseFloat(JOptionPane.showInputDialog("Qual o seu peso?")));
 		
-		mulher.definirImc();
+		
+		System.out.println(mulher.definirImc());
 	}
 
 }
