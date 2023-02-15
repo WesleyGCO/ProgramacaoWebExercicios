@@ -62,15 +62,21 @@ public class FolhaDePagamento {
 		return fgts;
 	}
 	
+	public float calcularInss() {
+		float inss = (float) (calcularSalarioBruto() * 0.10);
+		
+		return inss;
+	}
+	
 	public float calcularDescontos() {
-		float totalDescontos = calcularFgts() + calcularImpostoRenda();
+		float totalDescontos = calcularImpostoRenda() + calcularInss();
 		
 		return totalDescontos;
 	}
 	
 	public float definirSalarioLiquido() {
 		
-		float salarioLiquido = calcularSalarioBruto() - (calcularFgts() + calcularDescontos());
+		float salarioLiquido = calcularSalarioBruto() - calcularDescontos();
 		
 		return salarioLiquido;
 	}
