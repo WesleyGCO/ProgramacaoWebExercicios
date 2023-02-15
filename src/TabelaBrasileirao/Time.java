@@ -10,7 +10,7 @@ public class Time {
 	private int gols_pro;
 	private int gols_contra;
 	private int saldo_gols;
-	private float aproveitamento;
+	//private float aproveitamento;
 	
 	public Time() {
 	}
@@ -81,10 +81,11 @@ public class Time {
 		return this.pontos;
 	}
 	
-	public float calcularAproveitamento() {
-		this.aproveitamento =  calcularPontos() / (this.qtde_jogos * 3);
-
-		return this.aproveitamento;
+	public double calcularAproveitamento() {
+		
+		double aproveitamento = (this.pontos / (this.qtde_jogos * 3));
+		
+		return aproveitamento;
 	}
 	
 }
