@@ -2,46 +2,67 @@ package MassaCorporal;
 
 public class Pessoa {
 	
-	private String sexo;
-	private float peso;
-	private float altura;
+	private char sexo;
+	private Double peso;
+	private Double altura;
 	
 	public Pessoa() {
 	}
 
-	public String getSexo() {
+	public char getSexo() {
 		return sexo;
 	}
 
-	public void setSexo(String sexo) {
+	public void setSexo(char sexo) {
 		this.sexo = sexo;
 	}
 
-	public float getPeso() {
+	public Double getPeso() {
 		return peso;
 	}
 
-	public void setPeso(float peso) {
+	public void setPeso(Double peso) {
 		this.peso = peso;
 	}
 
-	public float getAltura() {
+	public Double getAltura() {
 		return altura;
 	}
 
-	public void setAltura(float altura) {
+	public void setAltura(Double altura) {
 		this.altura = altura;
 	}
 	
-	public float calcularImc() {
-		float valorFinal = (float) (this.peso / Math.pow(this.altura, 2));
-		
-		return valorFinal;
+	public Double calcularImc() {
+		return (this.peso / Math.pow(this.altura, 2));
 	}
 	
-	public String definirImc() {
+	public String situacaoImc() {
+		ImcConstantesPeso constante = new ImcConstantesPeso(sexo);
+		if (calcularImc() < constante.getAbaixoDoPeso()) {
+			return "Você está abaixo do peso";
+		}
 		
-		float imc = calcularImc();
+		else if (calcularImc() < constante.getPesoNormal()) {
+			return "Você está no peso normal";
+		}
+		
+		else if (calcularImc() < constante.getMarginalmenteAcimaPeso()) {
+			return "Você está marginalmente acima do peso";
+		}
+		
+		else if (calcularImc() < constante.getAcimaDoPesoIdeal()) {
+			return "Você está acima do peso ideal";
+		}
+		
+		else {
+			return "Você está OBESO";
+		}
+	}
+	
+	/*public String definirImc() {
+		
+		Double imc = calcularImc();
 		
 		if (this.sexo == "F") {
 			if (imc < 19.1) {
@@ -85,7 +106,5 @@ public class Pessoa {
 			else {
 				return "Você está OBESO";
 			}
-		}
+		}*/
 	}
-	
-}
