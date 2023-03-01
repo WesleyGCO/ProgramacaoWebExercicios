@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <title>Recibos</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <h1>Recibo de Aluguel</h1>
+    <div class="recibo">
+        <label>Valor:</label>
+        <input placeholder="00,00" type="number" id="valor" />
+        <div class="primeira_linha">
+            <label>Mês de ref.:</label>
+            <select name="mes_ref">
+                <option value="janeiro">Janeiro</option>
+                <option value="fevereiro">Fevereiro</option>
+                <option value="marco">Março</option>
+                <option value="abril">Abril</option>
+                <option value="maio">Maio</option>
+                <option value="junho">Junho</option>
+                <option value="julho">Julho</option>
+                <option value="agosto">Agosto</option>
+                <option value="setembro">Setembro</option>
+                <option value="outubro">Outubro</option>
+                <option value="novembro">Novembro</option>
+                <option value="dezembro">Dezembro</option>
+            </select>
+            <label>Ano:</label>
+            <input type="number" id="ano_ref" />
+        </div>
+        <label>Locatário(a):</label>
+        <input type="text" id="locatario" />
+        <label>CPF ou CNPJ (opcional):</label>
+        <input type="number" id="cpf_cnpj_locatario" />
+        <label>Locador(a):</label>
+        <input type="text" id="locador" />
+        <label>CPF ou CNPJ (opcional):</label>
+        <input type="number" id="cpf_cnpj_locador" />
+
+        <h3>ENDEREÇO DO IMÓVEL LOCADO:</h3>
+        <label>Rua:</label>
+        <input type="text" id="rua_imovel_locado" />
+        <label>Complemento: (opcional)</label>
+        <input type="text" id="complemento_imovel_locado" />
+        <label>Número:</label>
+        <input type="text" id="num_imovel_locado" />
+        <label>Bairro:</label>
+        <input type="text" id="bairro_imovel_locado" />
+        <label>Tipo Imóvel:</label>
+        <input type="text" id="tipo_imovel_locado" />
+        <label>Cidade:</label>
+        <input type="text" id="cidade_imovel_locado" />
+        <select name="estado_imovel">
+            <option value="selecione_estado">Selecione o Estado...</option>
+            <option value="acre">Acre</option>
+            <option value="alagoas">Alagoas</option>
+            <option value="amapa">Amapá</option>
+            <option value="amazonas">Amazonas</option>
+            <option value="bahia">Bahia</option>
+            <option value="ceara">Ceará</option>
+            <option value="distrito_federal">Distrito Federal</option>
+            <option value="espirito_santo">Espírito Santo</option>
+            <option value="goias">Goiás</option>
+            <option value="maranhao">Maranhão</option>
+            <option value="mato_grosso">Mato Grosso</option>
+            <option value="mato_grosso_sul">Mato Grosso do Sul</option>
+            <option value="minas_gerais">Minas Gerais</option>
+            <option value="para">Pará</option>
+            <option value="paraiba">Paraíba</option>
+            <option value="parana">Paraná</option>
+            <option value="pernambuco">Pernambuco</option>
+            <option value="piaui">Piauí</option>
+            <option value="rio_de_janeiro">Rio de Janeiro</option>
+            <option value="rio_grande_do_norte">Rio Grande do Norte</option>
+            <option value="rio_grande_do_sul">Rio Grande do Sul</option>
+            <option value="rondonia">Rondônia</option>
+            <option value="roraima">Roraima</option>
+            <option value="santa_catarina">Santa Catarina</option>
+            <option value="sao_paulos">São Paulo</option>
+            <option value="sergipe">Sergipe</option>
+            <option value="tocantis">Tocantins</option>
+        </select>
+        <label>CEP:</label>
+        <input type="number" id="cep_imovel_locado" />
+        <label>Observação: (opcional)</label>
+        <input type="text" id="observaco_recibo" />
+
+        <button id="botao_gerar_recibo">Gerar recibo</button>
+    </div>
+
+</body>
+<script type="text/javascript" src="index.js"></script>
+
+</html>
