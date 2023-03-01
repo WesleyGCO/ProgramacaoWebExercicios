@@ -18,42 +18,15 @@ h1{
     background-color: #468fb1;
 }
 
-.primeira_linha{
+.separacao_linha{
     display: block;
     margin-bottom: 10px;
 }
 
-.segunda_linha{
-    display: block;
-    margin-bottom: 10px;
-}
-
-.terceira_linha {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.quarta_linha {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.quinta_linha {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.segunda_linha {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.segunda_linha {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.segunda_linha {
-    display: block;
-    margin-bottom: 10px;
+.control {
+    box-sizing: border-box;
+    clear: both;
+    font-size: 1rem;
+    position: relative;
+    text-align: inherit;
 }
