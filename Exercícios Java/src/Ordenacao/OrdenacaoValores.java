@@ -3,6 +3,7 @@ package Ordenacao;
 import javax.swing.JOptionPane;
 
 public class OrdenacaoValores {
+
 	public static void main(String[] args) {
 		String valores = JOptionPane.showInputDialog("Digite 3 valores: ");
 		
