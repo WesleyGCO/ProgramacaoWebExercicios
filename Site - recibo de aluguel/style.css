@@ -1,32 +1,117 @@
-.body{
-    font-family: Arial, Helvetica, sans-serif;
+.body {
+    font-family: Arial, sans-serif;
     background-color: #85b7f0;
+
 }
 
-h1{
-    text-align: center;
-    margin-top: 40px;
+h1 {
+    text-align: left;
+    margin-top: 10px;
 }
 
-.recibo{
-    width: 850px;
+h2 {
+    margin-left: 5px;
+}
+
+.recibo {
+    width: 600px;
     margin: 0 auto;
     border: 2px solid #c0c0c0;
-    padding: 10px;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 0px 0px 5px #000000;
-    background-color: #468fb1;
+    background-color: rgb(219, 252, 247);
+    display: block;
 }
 
-.separacao_linha{
+.separacao {
     display: block;
     margin-bottom: 10px;
 }
 
-.control {
-    box-sizing: border-box;
-    clear: both;
-    font-size: 1rem;
-    position: relative;
-    text-align: inherit;
+.legenda {
+    display: block;
+    font-size: .80rem;
+    margin-top: 0.15cm;
+}
+
+.input {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.label {
+    color: #363636;
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+input:focus {
+    background-color: rgb(144, 248, 234);
+}
+
+.coluna {
+    display: block;
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
+
+.colunas {
+    margin: 5px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.coluna_pequena {
+    flex: none;
+    width: 20%;
+}
+
+.coluna_pequena_secundaria {
+    width: 33, 33%;
+    margin-left: 15px;
+}
+
+.coluna_pequena_terciaria {
+    width: 50%;
+    margin-left: 15px;
+}
+
+.coluna_cep {
+    width: 20%;
+    margin-left: 15px;
+}
+
+.select_mes {
+    box-shadow: #f80000;
+    max-width: 100%;
+    width: 80%;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.select_estado {
+    box-shadow: #f80000;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+button {
+    width: 90%;
+    border: none;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgb(10, 122, 107);
+    margin-right: 245px;
 }
