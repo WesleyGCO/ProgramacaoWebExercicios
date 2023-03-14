@@ -3,6 +3,8 @@
 <head>
     <title>Recibo</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -14,7 +16,7 @@
                 <div class="coluna">
                     <div class="coluna_pequena">
                         <label class="label">Valor:</label>
-                        <input class="input" placeholder="00,00" type="text" id="valor" />
+                        <input class="input" placeholder="00,00" id="valor" oninput="formatarNumero(this)" required />
                         <p class="legenda">Valor recebido</p>
                     </div>
                 </div>
@@ -25,7 +27,7 @@
             <div class="colunas">
                 <div class="coluna">
                     <label class="label">Mês de ref.:</label>
-                    <select class="select_mes" name="mes_ref">
+                    <select class="select_mes" name="mes_ref" id="mes_referencia" required>
                         <option value="janeiro">Janeiro</option>
                         <option value="fevereiro">Fevereiro</option>
                         <option value="marco">Março</option>
@@ -42,7 +44,7 @@
                 </div>
                 <div class="coluna_pequena">
                     <label class="label">Ano:</label>
-                    <input class="input" type="text" id="ano_ref" />
+                    <input class="input" type="text" id="ano_ref" required />
                 </div>
                 <div class="coluna"></div>
                 <div class="coluna"></div>
@@ -54,11 +56,12 @@
             <div class="colunas">
                 <div class="coluna">
                     <label class="label">Locatário(a):</label>
-                    <input class="input" type="text" id="locatario" />
+                    <input class="input" type="text" id="locatario" required />
                 </div>
                 <div class="coluna_pequena_secundaria">
                     <label class="label">CPF ou CNPJ (opcional):</label>
-                    <input class="input" type="text" id="cpf_cnpj_locatario"/>
+                    <input class="input" type="text" id="cpf_cnpj_locatario" maxlength="18"
+                        oninput="this.value = formatarCPFouCNPJ(this.value)" />
                     <p class="legenda">Somente números</p>
                 </div>
             </div>
@@ -68,11 +71,12 @@
             <div class="colunas">
                 <div class="coluna">
                     <label class="label">Locador(a):</label>
-                    <input class="input" type="text" id="locador" />
+                    <input class="input" type="text" id="locador" required />
                 </div>
                 <div class="coluna_pequena_secundaria">
                     <label class="label">CPF ou CNPJ (opcional):</label>
-                    <input class="input" type="text" id="cpf_cnpj_locador" />
+                    <input class="input" type="text" id="cpf_cnpj_locador"
+                        oninput="this.value = formatarCPFouCNPJ(this.value)" />
                     <p class="legenda">Somente números</p>
                 </div>
             </div>
@@ -84,7 +88,7 @@
             <div class="colunas">
                 <div class="coluna">
                     <label class="label">Rua:</label>
-                    <input class="input" type="text" id="rua_imovel_locado" />
+                    <input class="input" type="text" id="rua_imovel_locado" required />
                 </div>
                 <div class="coluna_pequena_secundaria">
                     <label class="label">Complemento: (opcional)</label>
@@ -97,15 +101,15 @@
             <div class="colunas">
                 <div class="coluna_pequena">
                     <label class="label">Número:</label>
-                    <input class="input" type="text" id="num_imovel_locado" />
+                    <input class="input" type="text" id="num_imovel_locado" required />
                 </div>
                 <div class="coluna_pequena_secundaria">
                     <label class="label">Bairro:</label>
-                    <input class="input" type="text" id="bairro_imovel_locado" />
+                    <input class="input" type="text" id="bairro_imovel_locado" required />
                 </div>
                 <div class="coluna_pequena_terciaria">
                     <label class="label">Tipo Imóvel:</label>
-                    <input class="input" type="text" id="tipo_imovel_locado" />
+                    <input class="input" type="text" id="tipo_imovel_locado" required />
                     <p class="legenda">Ex.: Residencial, Comercial, Rural</p>
                 </div>
             </div>
@@ -115,11 +119,11 @@
             <div class="colunas">
                 <div class="coluna">
                     <label class="label">Cidade:</label>
-                    <input class="input" type="text" id="cidade_imovel_locado" />
+                    <input class="input" type="text" id="cidade_imovel_locado" required />
                 </div>
                 <div class="coluna_pequena_secundaria">
                     <label class="label">Estado:</label>
-                    <select class="select_estado" name="estado_imovel">
+                    <select class="select_estado" name="estado_imovel" id="estado_ref" required>
                         <option value="selecione_estado">Selecione o Estado...</option>
                         <option value="acre">Acre</option>
                         <option value="alagoas">Alagoas</option>
@@ -145,14 +149,15 @@
                         <option value="rondonia">Rondônia</option>
                         <option value="roraima">Roraima</option>
                         <option value="santa_catarina">Santa Catarina</option>
-                        <option value="sao_paulos">São Paulo</option>
+                        <option value="sao_paulo">São Paulo</option>
                         <option value="sergipe">Sergipe</option>
                         <option value="tocantis">Tocantins</option>
                     </select>
                 </div>
                 <div class="coluna_cep">
                     <label class="label">CEP:</label>
-                    <input class="input" type="text" id="cep_imovel_locado" />
+                    <input class="input" type="text" id="cep_imovel_locado" maxlength="9" oninput="formatarCEP(this)"
+                        required />
                 </div>
             </div>
         </div>
@@ -168,11 +173,88 @@
         <div class="separacao">
             <div class="colunas">
                 <div class="coluna">
-                    <button id="botao_gerar_recibo">Gerar recibo</button>
+                    <button onclick="gerarRecibo()" id="botao_gerar_recibo">Gerar recibo</button>
                 </div>
                 <div class="coluna">
-                    <button id="botao_imprimir">Imprimir</button>
+                    <button onclick="imprimirRecibo()" id="botao_imprimir">Imprimir</button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="recibo_gerado" id="recibo_gerado">
+        <div class="colunas">
+            <div class="coluna">
+                <div class="coluna_esquerda_recibo_gerado">
+                    <small class="tamanho_15">MÊS DE REFERÊNCIA</small>
+                    <p><span id="mesFinal1"></span>/<span id="anoFinal1"></span></p>
+                </div>
+            </div>
+            <div class="coluna">
+                <div class="coluna_central_recibo_gerado">
+                    <small class="tamanho_17">RECIBO DE ALUGUEL</small>
+                </div>
+            </div>
+            <div class="coluna">
+                <div class="coluna_direita_recibo_gerado">
+                    <small class="tamanho_15">VALOR EM R$</small>
+                    <p><span id="valorFinal1"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="colunas">
+            <div class="coluna">
+                <div class="coluna_recibo_gerado">
+                    <h2 class="tamanho_15">LOCATÁRIO (A)</h2>
+                    <p><span id="locatarioFinal"></span></p>
+                </div>
+            </div>
+            <div class="coluna">
+                <div class="coluna_recibo_gerado">
+                    <h2 class="tamanho_15">LOCADOR (A)</h2>
+                    <p><span id="locadorFinal1"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="colunas">
+            <div class="coluna">
+                <div class="coluna_recibo_gerado">
+                    <h5 class="tamanho_15">ENDEREÇO DO MÓVEL LOCADO</h5>
+                    <p><span id="ruaFinal"></span>, <span id="numeroFinal"></span> - <span id="bairroFinal"></span> - <span id="cidadeFinal1"></span> - <span id="estadoFinal"></span> - CEP: <span id="cepFinal"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="colunas">
+            <div class="coluna">
+                <div class="coluna_recibo_gerado">
+                    <p>
+                        "Recebi de <b><span id="locadorFinal2"></span></b>", a importância de "<b>R$ <span id="valorFinal2"></span></b>", como pagamento de aluguel do imóvel <span id="imovelFinal"></span> indicado acima, referente ao mês de "<b><span id="mesFinal2"></span> de <span id="anoFinal2"></span></b>""."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="colunas">
+            <div class="coluna">
+                <div class="coluna_recibo_gerado">
+                    <p>Pago por:</p>
+                    <p>_________________________</p>
+                </div>
+            </div>
+            <div class="coluna">
+                <div class="coluna_recibo_gerado">
+                    <p>Recebido por:</p>
+                    <p>_________________________</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="colunas">
+            <div class="coluna_esquerda_recibo_gerado">
+                <span id="cidadeFinal2"></span>, <span id="dataAtual"></span>
             </div>
         </div>
     </div>

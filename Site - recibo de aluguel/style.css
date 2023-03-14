@@ -115,3 +115,67 @@ button {
     background-color: rgb(10, 122, 107);
     margin-right: 245px;
 }
+
+.recibo_gerado {
+    width: 600px;
+    margin: 0 auto;
+    border: 2px solid #c0c0c0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #000000;
+    background-color: rgb(34, 117, 105);
+    margin-top: 30px;
+}
+
+.colunas_recibo_gerado {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.coluna_recibo_gerado {
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-top: 40px;
+}
+
+.coluna_esquerda_recibo_gerado {
+    text-align: left!important;
+    display: block;
+    padding: 5px;
+}
+
+.coluna_central_recibo_gerado {
+    text-align: center;
+    display: block;
+    padding: 5px;
+}
+
+.coluna_direita_recibo_gerado {
+    text-align: right;
+    display: block;
+    padding: 5px;   
+}
+
+.tamanho_15 {
+    font-size: 12px;
+    text-transform: uppercase!important;
+}
+
+.tamanho_17 {
+    font-size: 17px
+}
+
+@media print {
+    body {
+        visibility: hidden;
+    }
+
+    .recibo_gerado {
+        visibility: visible;
+        position: absolute;
+        top: 0;
+    }
+}
