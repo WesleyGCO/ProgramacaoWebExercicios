@@ -38,6 +38,7 @@ function imprimirRecibo() {
 }
 
 function gerarRecibo() {
+
     //Mes
     const mes_refInput1 = document.getElementById("mes_referencia").value;
     document.getElementById("mesFinal1").innerHTML = mes_refInput1;
@@ -144,11 +145,7 @@ function gerarRecibo() {
         document.getElementById("estadoFinal").innerHTML = "SE";
     } else if (estadoInput == "tocantis") {
         document.getElementById("estadoFinal").innerHTML = "TO";
-    } 
-    
-
-
-
+    }
     //CEP
     const cepInput = document.getElementById("cep_imovel_locado").value;
     document.getElementById("cepFinal").innerHTML = cepInput;
@@ -159,6 +156,8 @@ function gerarRecibo() {
 
     //Data
     document.getElementById("dataAtual").innerHTML = exibirDataAtual();
+
+    return validarFormulario();
 }
 
 
@@ -171,3 +170,27 @@ function exibirDataAtual() {
     const dataFormatada = `${dia}/${mes}/${ano}`;
     return dataFormatada;
 }
+
+
+// function validarFormulario() {
+//     var valor = document.getElementById("valor").value;
+//     var mes_ref = document.getElementById("mes_referencia").value;
+//     var ano = document.getElementById("ano_ref").value;
+//     var locatario = document.getElementById("locatario").value;
+//     var locador = document.getElementById("locador").value;
+//     var rua_imovel_locado = document.getElementById("rua_imovel_locado").value;
+//     var num_imovel_locado = document.getElementById("num_imovel_locado").value;
+//     var bairro_imovel_locado = document.getElementById("bairro_imovel_locado").value;
+//     var tipo_imovel_locado = document.getElementById("num_imovel_locado").value;
+//     var cidade_imovel_locado = document.getElementById("bairro_imovel_locado").value;
+//     var estado_ref = document.getElementById("estado_ref").value;
+//     var cep_imovel_locado = document.getElementById("num_imovel_locado").value;
+
+
+//     if (valor == "" || mes_ref == "" || ano == "" || locatario == "" || locador == "" || rua_imovel_locado == "" || num_imovel_locado == "" || bairro_imovel_locado == "" || tipo_imovel_locado == "" || cidade_imovel_locado == "" || estado_ref == "" || cep_imovel_locado == "") {
+//         alert("Por favor, preencha todos os campos obrigatórios.");
+//         return false;
+//     } else{
+//         return true;
+//     }
+// }
